@@ -63,25 +63,45 @@ for (g = 0; g < animals.length; g++)
 //Задание 9
 // Выведите символы в строке в консоль
 const str = 'Hello';
-
+for (f = 0; f < str.length; f++)
+    console.log(str[f]);
 
 //Задание 10
 // Выведите все элементы массива в консоль используя цикл for...of. Массив array объявлен в Задании 6
+for (let arr of array)
+    console.log(arr);
 
 //Задание 11
 // Выведите каждое слово из массива строк в консоль
 // Подсказка: вам понадобится метод массивов split
 const sentences = ['Hello, world!', 'How are you?'];
+//const sentences2 = sentences.split('')
+//console.log(sentences2);
 
 //Задание 12
 // Выведите сумму всех элементов массива используя цикл for..of. Массив numbers объявлен в Задании 7
+function sum() {
+    let sum = 0;
+    for (number of numbers) {
+        sum += number;
+    }
+    return sum;
+}
+console.log(sum());
 
 //Задание 13
 // Выведите длину каждого слова из массива строк в консоль
 const list = ['apple', 'banana', 'cherry'];
+for (let lis of list) {
+    console.log(lis.length)
+}
 
 //Задание 14
 // Преобразуйте массив каждый элемент массива words в верхний регистр
+const words2 = ['маяк', 'кружка', 'персик']
+for (let word of words2) {
+    console.log(word.toUpperCase);
+}
 
 //Задание 15
 // Подсчитайте количество гласных букв в строке
@@ -89,13 +109,28 @@ const list = ['apple', 'banana', 'cherry'];
 const greeting = 'Hello, world!';
 let vowelCount = 0;
 const vowels = ['a', 'e', 'i', 'o', 'u'];
+function toCount() {
+    for (greet of greeting) {
+        const count = greeting.includes(vowels)
+
+    }
+}
+console.log(toCount());
+
 
 //Задание 16
 // Объедините все строки массива в одну строку с пробелами между ними
 const words = ['Hello', 'world', '!'];
+//const newWords = words.split(',').join(' ');
+//console.log(newWords);
 
 //Задание 17
 // Выведите числа от 1 до 10 в консоль используя цикл while
+const Number = 1;
+while (Number < 11) {
+    console.log(Number);
+    Number += 1;
+}
 
 //Задание 18
 // Выведите числа от 1 до 10 в консоль в обратном порядке используя цикл while
