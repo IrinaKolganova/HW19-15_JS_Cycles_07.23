@@ -75,8 +75,10 @@ for (let arr of array)
 // Выведите каждое слово из массива строк в консоль
 // Подсказка: вам понадобится метод массивов split
 const sentences = ['Hello, world!', 'How are you?'];
-//const sentences2 = sentences.split('')
-//console.log(sentences2);
+for (let sentence of sentences)
+    console.log(sentence);
+// for (let word of sentence)
+//     console.log(word);
 
 //Задание 12
 // Выведите сумму всех элементов массива используя цикл for..of. Массив numbers объявлен в Задании 7
@@ -100,7 +102,7 @@ for (let lis of list) {
 // Преобразуйте массив каждый элемент массива words в верхний регистр
 const words2 = ['маяк', 'кружка', 'персик']
 for (let word of words2) {
-    console.log(word.toUpperCase);
+    console.log(word.toUpperCase());
 }
 
 //Задание 15
@@ -112,7 +114,6 @@ const vowels = ['a', 'e', 'i', 'o', 'u'];
 function toCount() {
     for (greet of greeting) {
         const count = greeting.includes(vowels)
-
     }
 }
 console.log(toCount());
@@ -121,52 +122,58 @@ console.log(toCount());
 //Задание 16
 // Объедините все строки массива в одну строку с пробелами между ними
 const words = ['Hello', 'world', '!'];
-//const newWords = words.split(',').join(' ');
-//console.log(newWords);
+const newWords = words.join(' ');
+console.log(newWords);
 
 //Задание 17
 // Выведите числа от 1 до 10 в консоль используя цикл while
-// const Number1 = 1;
-// while (Number1 < 11) {
-//     console.log(Number1);
-//     Number1++;
-// }
-//Не понимаю, почему не работает???
+let Number1 = 1;
+while (Number1 < 11) {
+    console.log(Number1);
+    Number1++;
+}
 
 //Задание 18
 // Выведите числа от 1 до 10 в консоль в обратном порядке используя цикл while
-// const Number2 = 10;
-// while (Number2 > 0) {
-//     console.log(Number2);
-//     Number1--;
-// }
-//Такая же ерунда, как в 17м задании...
+let Number2 = 10;
+while (Number2 > 0) {
+    console.log(Number2);
+    Number2--;
+}
+
 
 //Задание 19
 // Проверьте, все ли элементы массива являются положительными числами используя цикл while
 // Подсказка: используйте директиву break
 const allNumbers = [1, 2, 3, -4, 5];
 let allPositive = true;
-while (allNumbers > 0) {
-    console.log(allNumbers)
+let index = 0;
+while (index < allNumbers.length) {
+    if (allNumbers[index] <= 0) {
+        allPositive = false;
+        break;
+    }
+    index++;
 }
-//не понимаю, как использовать и while и break и массив?...
+console.log(allPositive);
 
 //Задание 20
 // Выведите значения элементов массива до первого отрицательного числа используя цикл do...while
 const random = [2, 4, 6, -3, 8, 10];
-do { console.log(random); }
-while (random < 0);
-//почему не срабатывает???
+let index20 = 0;
+do {
+    console.log(random[index20]);
+    index20++
+} while (index20 < random.length && random[index20] >= 0);
 
 //Задание 21
 // Выведите числа от 1 до 100, пропуская числа, которые делятся на 3 используя цикл do...while
-// let t = 1;
-// t += 1;
-//if (t % 3 == 0) { return false }
-// do { console.log(t); }
-// while (t < 100)
-//тут вообще получился бесконечный цикл и я ничего не поняла(((
+let t = 1;
+do {
+    if (t % 3 !== 0) { console.log(t); }
+    t++
+}
+while (t <= 100)
 
 //Задание 22
 // Запросить у пользователя числа, пока сумма введенных чисел не станет больше 100
@@ -181,14 +188,19 @@ console.log(count);
 //Задание 23
 // Напишите функцию, которая изменит фоновый цвет всех элементов <h4> на странице на синий цвет
 function getBlue() {
-    const tytle = document.querySelectorAll('h4');
-    tytle.style.backgroundColor = "blue";
+    const tytle = document.getElementsByTagName('h4');
+    for (let z = 0; z < tytle.length; z++) { tytle[z].style.backgroundColor = 'blue' }
 }
-console.log(getBlue());
+getBlue();
 
 //Задание 24
 // Напишите генератор случайных строк до 6 символов
 // Подсказка: используйте методы объекта Math и длину массива alphabet
 let alphabet = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';
 let randomString = '';
-//тут вообще белый шум...
+for (let y = 0; y < 6; y++) {
+    let randomIndex = Math.floor(Math.random() * alphabet.length);
+    randomString += alphabet.charAt(randomIndex);
+}
+console.log(randomString);
+

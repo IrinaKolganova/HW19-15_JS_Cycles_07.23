@@ -22,15 +22,17 @@ const cities = [
 
 function getTemp() {
     const temperature = [];
+    let result = '';
     for (let i = 0; i < cities.length; i++) {
         const cityTemp = prompt(`Введите температуру в г. ${cities[i]}`, '');
         temperature.push(cityTemp);
+        result += `Температура в г. ${cities[i]}:${temperature[i]};\n`
     };
-    for (let j = 0; j < cities.length; i++) {
-        const result = `Температура в г.${cities[j]}: ${temperature[i]}`
-    }
+    // let minT = Math.min(temperature[i]);
+    // let maxT=Math.max(temperature[i]);
     return result;
 }
+
 document.getElementById("list").innerHTML = getTemp();
 
 // Вот здесь у меня получилось вывести на экран температуру в городах через запятую. Но не могу разобраться, как сделать это в виде "Температура в г. ... : ..."? Подскажи пожалуйста!

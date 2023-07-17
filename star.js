@@ -9,8 +9,8 @@ const numbers = [];
 // 2. Заполните массив `numbers` целыми числами от -10 до 10 (включительно) с помощью цикла.
 for (let i = -10; i < 11; i++) {
   numbers.push(i);
-  console.log(numbers);
 };
+console.log(numbers);
 // 3. Используя **циклы**, выполните следующие операции над массивом `numbers`:
 //     - Удалите все отрицательные числа из массива
 for (let a = 0; a < numbers.length; a++) {
@@ -22,7 +22,7 @@ for (let b = 0; b < numbers.length; b++) {
   console.log(getSquare(numbers[b]));
 }
 //     - Отсортируйте числа в порядке убывания
-const numSort = numbers.sort(function (c, d) { return c - d });
+const numSort = numbers.sort(function (c, d) { return d - c });
 console.log(numSort);
 // 4. Выведите полученный массив `numbers` в консоль
 console.log(numbers);
